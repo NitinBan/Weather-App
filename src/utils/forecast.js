@@ -23,7 +23,9 @@ const forecast = (latitude, longitude, callback) => {
           ", which feel likes " +
           body.current.feelslike +
           " weather is : " +
-          body.current.weather_descriptions[0]
+          body.current.weather_descriptions[0] +
+          ". Humidity is " +
+          body.current.humidity
       );
     }
   });
