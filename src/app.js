@@ -8,6 +8,9 @@ const forecast = require("./utils/forecast");
 
 const app = express();
 
+//to get enviroment variablr PORT set by heroku
+const port = process.env.PORT || 3000;
+
 //define paths for express config
 //[__dirname variable contain the dir name]
 //path.join to manipulate the path
@@ -118,8 +121,8 @@ app.get("*", (req, res) => {
 // -- start the server --
 
 //it take port as arguement and optional function which runs when server is up and running
-app.listen(3000, () => {
-  console.log("server is up on port 3000.");
+app.listen(port, () => {
+  console.log("server is up on port " + port + ".");
 });
 
 /* -- tutorials -- */

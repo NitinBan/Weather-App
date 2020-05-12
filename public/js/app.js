@@ -13,21 +13,21 @@ weatherForm.addEventListener("submit", (e) => {
 
   messageOne.textContent = "Loading...";
   messageTwo.textContent = "";
+
   //localhost:3000/weather?address=delhi
-  fetch("http://localhost:3000/weather?address=" + location).then(
-    (response) => {
-      //response contain the data
-      //.json is used to parse the data
-      response.json().then((data) => {
-        if (data.error) {
-          messageOne.textContent = data.error;
-        } else {
-          messageOne.textContent = data.location;
-          messageTwo.textContent = data.forecastData;
-        }
-      });
-    }
-  );
+
+  fetch("/weather?address=" + location).then((response) => {
+    //response contain the data
+    //.json is used to parse the data
+    response.json().then((data) => {
+      if (data.error) {
+        messageOne.textContent = data.error;
+      } else {
+        messageOne.textContent = data.location;
+        messageTwo.textContent = data.forecastData;
+      }
+    });
+  });
 });
 
 /* -- tutorial -- */
