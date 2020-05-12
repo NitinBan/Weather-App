@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Weather App</title>
+    <link rel="icon" href="/img/weather.png">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- within double curly brackets with '>' we can access the partials -->
+        {{>header}}
+
+        <form action="">
+            <input type="text" name="" id="" placeholder="Location">
+            <button>Search</button>
+        </form>
+
+        <p id="message-1"></p>
+        <p id="message-2"></p>
+    </div>
+    {{>footer}}
+</body>
+<script src="/js/app.js"></script>
+
+</html>
